@@ -25,16 +25,20 @@ git clone https://github.com/danbsilva/nodejs-blog-api.git
 npm install
 ```
 
-3. Create a .env file and place the variables `DATABASE_URL` and `SECRET`
-```config
-DATABASE_URL="postgresql://user:pass@host:port/dbname?schema=schema"
-SECRET="YOUR_SECRET"
+3. Create a .env file and place the variables
+```bash
+cp .env.example .env
 ```
+Open the .env file and configure your environment variables
+
 
 4. Run `npm start` to start the server.
 ```bash
 npm start
 ```
+
+The server will run on the host http://localhost:3000
+
 
 ## Usage
 
