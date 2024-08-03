@@ -20,19 +20,24 @@ This is a Node.js API for a blog application. It allows users to create, read, u
 git clone https://github.com/danbsilva/nodejs-blog-api.git
 ```
 
-2. Run `npm install` to install the dependencies.
+2. Access the `nodejs-blog-api` folder
+```bash
+cd nodejs-blog-api
+```
+
+3. Run `npm install` to install the dependencies.
 ```bash
 npm install
 ```
 
-3. Create a .env file and place the variables
+4. Create a .env file and place the variables
 ```bash
 cp .env.example .env
 ```
 Open the .env file and configure your environment variables
 
 
-4. Run `npm start` to start the server.
+5. Run `npm start` to start the server.
 ```bash
 npm start
 ```
