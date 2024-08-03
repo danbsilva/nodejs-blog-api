@@ -65,3 +65,20 @@ export const getPostById = async (postId) => {
         throw new Error(`Error fetching post: ${error.message}`);
     }
 }
+
+export const updatePost = async (postId, postData) => {
+    try {
+        const updatedPost = await prisma.post.update({
+            where: {
+                id: postId,
+            },
+            data: {
+                title: postData.title,
+                content: postData.content,
+            },
+        });
+        return updatedPost;
+    } catch (error) {
+        throw new Error(`Error updating post: ${error.message}`);
+    }
+}

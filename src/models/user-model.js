@@ -8,7 +8,8 @@ export const createUser = async (user) => {
             data: {
                 email: user.email,
                 name: user.name,
-                password: hashedPassword,
+                password: user.password,
+                profileId: user.profileId,
             },
         });
         return newUser;
