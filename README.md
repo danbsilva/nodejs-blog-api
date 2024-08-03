@@ -32,6 +32,9 @@ SECRET="YOUR_SECRET"
 ```
 
 4. Run `npm start` to start the server.
+```bash
+npm start
+```
 
 ## Usage
 
