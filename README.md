@@ -36,12 +36,15 @@ cp .env.example .env
 ```
 Open the .env file and configure your environment variables
 
+5. Execute the command `npx prisma migrate dev --name init` to create tables in database
+```bash
+npx prisma migrate dev --name init
+```
 
-5. Run `npm start` to start the server.
+6. Run `npm start` to start the server.
 ```bash
 npm start
 ```
-
 The server will run on the host http://localhost:3000
 
 
