@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { createUser, getUsers, findUserByEmail } from "../models/user-model.js";
+import { createUser, findUserByEmail } from "../models/user-model.js";
 
 export const newUser = async (req, res) => {
     try {
@@ -14,15 +14,6 @@ export const newUser = async (req, res) => {
         const user = await createUser(req.body);
 
         return res.status(201).json(user);
-    } catch (error) {
-        return res.status(500).json({ error: error.message });
-    }
-};
-
-export const fetchUsers = async (req, res) => {
-    try {
-        const users = await fetchUsers();
-        return res.status(200).json(users);
     } catch (error) {
         return res.status(500).json({ error: error.message });
     }

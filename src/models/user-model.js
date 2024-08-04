@@ -9,29 +9,11 @@ export const createUser = async (user) => {
                 email: user.email,
                 name: user.name,
                 password: user.password,
-                profileId: user.profileId,
             },
         });
         return newUser;
     } catch (error) {
         throw new Error(`Error creating user: ${error.message}`);
-    }
-}
-
-export const getUsers = async () => {
-    try {
-        const users = await prisma.user.findMany({
-            include: {
-                posts: {
-                    orderBy: {
-                        id: "desc",
-                    },
-                },
-            },
-        });
-        return users;
-    } catch (error) {
-        throw new Error(`Error fetching users: ${error.message}`);
     }
 }
 
