@@ -23,9 +23,20 @@ export const getCommentsByPost = async (postId) => {
             where: {
                 postId: postId,
             },
+            omit: {
+                userId: true,
+                postId: true,
+            },
             include: {
+                post: {
+                    select: {
+                        id: true,
+                        title: true,
+                    },
+                },
                 user: {
                     select: {
+                        id: true,
                         name: true,
                     },
                 },
@@ -43,9 +54,20 @@ export const getCommentById = async (commentId) => {
             where: {
                 id: commentId,
             },
+            omit: {
+                userId: true,
+                postId: true,
+            },
             include: {
+                post: {
+                    select: {
+                        id: true,
+                        title: true,
+                    },
+                },
                 user: {
                     select: {
+                        id: true,
                         name: true,
                     },
                 },

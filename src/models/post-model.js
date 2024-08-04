@@ -23,10 +23,31 @@ export const getPostsByAuthor = async (authorId) => {
             where: {
                 authorId: authorId,
             },
+            omit: {
+                authorId: true,
+            },
             include: {
                 author: {
                     select: {
+                        id: true,
                         name: true,
+                    },
+                },
+                comments: {
+                    omit: {
+                        userId: true,
+                        postId: true,
+                    },
+                    include: {
+                        user: {
+                            select: {
+                                id: true,
+                                name: true,
+                            },
+                        },
+                    },
+                    orderBy: {
+                        id: "desc",
                     },
                 },
             },
@@ -44,11 +65,25 @@ export const getPostById = async (postId) => {
             where: {
                 id: postId,
             },
+            omit: {
+                authorId: true,
+            },
             include: {
+                author: {
+                    select: {
+                        id: true,
+                        name: true,
+                    },
+                },
                 comments: {
+                    omit: {
+                        userId: true,
+                        postId: true,
+                    },
                     include: {
                         user: {
                             select: {
+                                id: true,
                                 name: true,
                             },
                         },
