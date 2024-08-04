@@ -41,9 +41,9 @@ Open the .env file and configure your environment variables
 npx prisma migrate dev --name init
 ```
 
-6. Run `npm start` to start the server.
+6. Run `npm run start:dev` to start the server on dev mode.
 ```bash
-npm start
+npm run start:dev
 ```
 The server will run on the host http://localhost:3000
 
